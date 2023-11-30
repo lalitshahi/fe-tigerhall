@@ -4,9 +4,9 @@ import { NetworkStatus, useQuery } from "@apollo/client";
 import { GET_CONTENT_CARDS } from "../operations";
 import CardSkeleton from "../components/CardSkeleton";
 import { ContentType, Podcast } from "../gql/graphql";
-import { useContext, useEffect } from "react";
-import { SearchContext } from "../searchContext";
+import { useEffect } from "react";
 import { range } from "lodash";
+import { useSearchContext } from "../hooks/useSearchContext";
 
 const ContentList = () => {
   const { loading, error, data, refetch, networkStatus } = useQuery(
@@ -16,16 +16,15 @@ const ContentList = () => {
     }
   );
 
-  const search = useContext(SearchContext);
+  const { searchTerm } = useSearchContext();
 
   useEffect(() => {
-    console.log(search.searchTerm);
     refetch({
       limit: 40,
-      keywords: search.searchTerm,
+      keywords: searchTerm,
       types: ContentType.Podcast,
     });
-  }, [search.searchTerm, refetch]);
+  }, [searchTerm, refetch]);
 
   const edges = data?.contentCards?.edges || [];
 

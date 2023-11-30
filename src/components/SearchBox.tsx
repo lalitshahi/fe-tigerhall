@@ -6,21 +6,18 @@ import {
 } from "@chakra-ui/react";
 import { Search } from "react-feather";
 import { theme } from "../theme";
-import { useContext, useRef, useState } from "react";
-import { SearchContext } from "../searchContext";
+import { useRef, useState } from "react";
 import { debounce } from "lodash";
+import { useSearchContext } from "../hooks/useSearchContext";
 
 const SearchBox = () => {
   const bg = useColorModeValue("grey.200", "grey.900");
   const color = useColorModeValue(theme.colors.grey[900], "white");
-  const searchContext = useContext(SearchContext);
+  const { setSearchTerm } = useSearchContext();
   const [searchText, setSearchText] = useState("");
 
   const debouncedSearch = useRef(
-    debounce(
-      (searchText: string) => searchContext.setSearchTerm(searchText),
-      300
-    )
+    debounce((searchText: string) => setSearchTerm(searchText), 300)
   ).current;
 
   const searchQueryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
