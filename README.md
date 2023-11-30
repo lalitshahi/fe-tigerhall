@@ -2,26 +2,17 @@
 
 Steps to run the project
 ```sh
-  - Clone the repo & cd fe-tigerhall
+  - git clone git@github.com:lalitshahi/fe-tigerhall.git & cd fe-tigerhall
   - pnpm install
   - pnpm run dev
 ```
 
-## Assignment Instructions
-
-The goal of this project is to assess development skills suitable for a front-end developer position.
-It tests knowledge and proficiency in a number of technologies that are relevant to us as a company.
-
-  **Project Name:** Tigerhall Content
-
-  **Project Goal:** Create a small single-page application that can be used to search tigerhall content
-
-  **Technology:** Modern React, e.g functional components, hooks and typescript
-
-  **Deliverables:** The solution should be hosted on gitlab, Github or any other shared platform and the link sent to antoine@tigerhall.com
-
 ### Description
-We want you to develop a mobile web view of where the users can search our content
+This project displays content from graphql api endpoint.
+
+On searching using the searchBar content should get filtered, and while data is being fetched, loader should be displayed on screen.
+
+
 ### Requirements
   1. The search should filter the content cards using the API and the keywords filter.
   2. When searching there should be a loading animation (Let us see how creative you can be)
