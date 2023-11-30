@@ -29,9 +29,9 @@ export default function PodcastCard(props: Props) {
   const newImageUri = `${urlObj.origin}/resize/1048x,960x${urlObj.pathname}`;
 
   return (
-    <Card maxW="sm" borderRadius={"8px"} bg={"white"} minW="sm">
+    <Card maxW="sm" borderRadius={"8px"} bg={"white"} minW="xs" w={"100%"}>
       <CardBody padding={0}>
-        <Box pos={"relative"} maxW="sm" minW="sm" minH={"200px"}>
+        <Box pos={"relative"} maxW="sm" minH={"200px"}>
           <CardTopLeftBadge />
           <Image
             src={newImageUri}
