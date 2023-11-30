@@ -36,6 +36,14 @@ const ContentList = () => {
     );
   }
 
+  if (!loading && edges.length === 0 && searchTerm) {
+    return (
+      <VStack>
+        <Text>No content matching the search term...</Text>
+      </VStack>
+    );
+  }
+
   return loading || networkStatus === NetworkStatus.refetch ? (
     <Box gap={5} display={"flex"} flexDirection={"row"} flexWrap={"wrap"}>
       {range(8).map((count) => (
