@@ -4,7 +4,7 @@ Steps to run the project:
 
   - Clone the repo
 ```sh
-  git clone git@github.com:lalitshahi/fe-tigerhall.git & cd fe-tigerhall
+  git clone git@github.com:lalitshahi/fe-tigerhall.git && cd fe-tigerhall
   ```
   
   - Install the packages
