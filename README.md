@@ -1,11 +1,22 @@
 # TigerHall FE Assignment
 
-Steps to run the project
+Steps to run the project:
+
+  - Clone the repo
 ```sh
   - git clone git@github.com:lalitshahi/fe-tigerhall.git & cd fe-tigerhall
+  ```
+  
+  - Install the packages
+  ```sh
   - pnpm install
+  ```
+
+  - Run the project
+  ```sh
   - pnpm run dev
-```
+  ```
+
 
 ### Description
 This project displays content from graphql api endpoint.
